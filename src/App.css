@@ -1,0 +1,30 @@
+.darkbg {
+  background-color: #181a1e;
+}
+
+.padding-custom {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero {
+  background-image: url(../src/assets/terem.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
