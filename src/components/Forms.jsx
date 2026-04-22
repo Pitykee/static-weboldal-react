@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 // bootstrap
 import {
@@ -9,60 +9,30 @@ import {
   FormControl,
   FormGroup,
   FormLabel,
+  Modal,
   Row,
 } from "react-bootstrap";
 
+//context
+import { FitnessContext } from "../context/FitnessContext";
+
 export default function Forms() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [errors, setErrors] = useState({});
+  const { formData, errors, handleChange, handleSubmit, validate } =
+    useContext(FitnessContext);
 
-  const handleChange = (name, value) => {
-    setFormData((data) => ({
-      ...data,
-      [name]: value,
-    }));
-  };
+  const [showModal, setShowModal] = useState(false);
+  const [submittedData, setSubmittedData] = useState(null);
 
-  const handleSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
 
     const validationErrors = validate();
 
-    if (Object.keys(validationErrors).length > 0)
-      return setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
 
-    setErrors({});
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
-
-  const validate = () => {
-    const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "A név megadása kötelező!";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Az email megadása kötelező!";
-    } else if (
-      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
-    ) {
-      newErrors.email = "Hibás email formátum!";
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Az üzenet nem lehet üres!";
-    }
-
-    return newErrors;
+    setSubmittedData(formData);
+    handleSubmit();
+    setShowModal(true);
   };
 
   return (
@@ -72,7 +42,7 @@ export default function Forms() {
           Kérdésed van? Írj nekünk!
         </h2>
         <Col md={6}>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={submitHandler}>
             <FormGroup className="mb-3" controlId="exampleForm.ControlInput1">
               <FormLabel>Név</FormLabel>
               <FormControl
@@ -122,6 +92,37 @@ export default function Forms() {
               Küldés
             </Button>
           </Form>
+
+          <Modal
+            show={showModal}
+            onHide={() => setShowModal(false)}
+            centered
+            className="border-0 shadow-lg"
+          >
+            <Modal.Header className="border-0 text-center">
+              <Modal.Title>Ez egy teszt adat!</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              Nincs valódi e-mail küldés de ezeket az adatokat továbbítottuk:
+              <br />
+              <br />
+              <strong>Név: </strong>
+              {submittedData?.name}
+              <br />
+              <strong>Email: </strong>
+              {submittedData?.email}
+              <br />
+              <strong>Üzenet: </strong>
+              {submittedData?.message}
+            </Modal.Body>
+
+            <Modal.Footer className="border-0 d-flex justify-content-center">
+              <Button variant="danger" onClick={() => setShowModal(false)}>
+                Rendben
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </Col>
       </Row>
     </Container>

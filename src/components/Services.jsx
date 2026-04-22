@@ -18,8 +18,8 @@ export default function Services() {
       <Row>
         <h2 className="text-center mb-5 fw-bold display-6">Szolgáltatások</h2>
         {cardItems.serviceItems.map((item) => (
-          <Col md={4} key={item.id} className="mb-4">
-            <Card className="shadow rounded-4">
+          <Col md={4} key={item.id} className="mb-4 d-flex">
+            <Card className="shadow rounded-4 w-100 h-100">
               <CardBody className="darkbg rounded-4 py-5 px-4 gap-3 d-flex flex-column">
                 <CardTitle className="text-white fw-bold fs-3">
                   {item.name}

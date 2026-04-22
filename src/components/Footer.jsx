@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <footer className="darkbg">
         <Container className="d-flex justify-content-between py-3 align-items-center">
-          <p className="text-white m-0">Copyright © Szolnoki Fitness Terem</p>
+          <p className="text-white m-0">Copyright © Fitness Terem</p>
           <div className="d-flex gap-2">
             <Button
               href="https://www.facebook.com/powergymszolnok"

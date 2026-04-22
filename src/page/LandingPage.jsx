@@ -11,22 +11,25 @@ export default function LandingPage() {
   return (
     <>
       <section className="hero justify-content-center d-flex flex-column">
-        <Container className="hero-content">
+        <Container id="hero" className="hero-content">
           <Row>
-            <Col md={5}>
+            <Col md={6}>
               <h1 className="text-white fw-bold display-3">
-                Szolnoki Fitness Terem
+                Érd el a legjobb formád
               </h1>
               <p className="text-white">
-                Szolnok legjobban felszerelt konditerme. Nálunk nem csak egy
-                termet kapsz hanem értékeket.
+                Nem számít, hogy most kezded vagy már régóta edzel — nálunk
+                minden edzés egy új lehetőség arra, hogy erősebb, fittebb és
+                magabiztosabb legyél. Modern gépekkel, támogató közösséggel és
+                személyi edzőkkel segítünk, hogy elérd a saját céljaidat, a
+                saját tempódban.
               </p>
               <div className="d-flex gap-3">
                 <Button href="#services" variant="danger">
-                  Szolgáltatások
+                  Bérletek megtekintése
                 </Button>
                 <Button href="#contact" variant="outline-danger">
-                  Kapcsolat
+                  Időpont foglalás
                 </Button>
               </div>
             </Col>
