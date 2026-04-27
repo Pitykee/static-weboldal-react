@@ -1,34 +1,31 @@
 // bootstrap
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 
 const Navigation = () => {
   return (
-    <div className="bg-dark text-white sticky-top">
-      <Container className="py-3">
-        <div className="d-flex justify-content-between align-items-center">
-          <a className="m-0 text-decoration-none text-white" href="#hero">
-            <h4>Fitness Logo</h4>
-          </a>
+    <Navbar expand="md" variant="dark" className="bg-dark sticky-top py-3">
+      <Container>
+        <Navbar.Brand href="#hero">
+          <h4 className="m-0 text-white">Fitness Logo</h4>
+        </Navbar.Brand>
 
-          <ul className="list-unstyled d-flex gap-4 align-items-center m-0">
-            <li>
-              <a href="#services" className="text-white text-decoration-none">
-                Szolgáltatások
-              </a>
-            </li>
-            <li>
-              <a href="#pricelist" className="text-white text-decoration-none">
-                Árlista
-              </a>
-            </li>
+        <Navbar.Toggle aria-controls="main-navbar" />
 
+        <Navbar.Collapse id="main-navbar">
+          <Nav className="ms-auto align-items-center gap-2 mt-md-0">
+            <Nav.Link href="#services" className="text-white">
+              Szolgáltatások
+            </Nav.Link>
+            <Nav.Link href="#pricelist" className="text-white">
+              Árlista
+            </Nav.Link>
             <Button href="#contact" className="border-0 px-4" variant="danger">
               Próba edzés
             </Button>
-          </ul>
-        </div>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
-    </div>
+    </Navbar>
   );
 };
 export default Navigation;
