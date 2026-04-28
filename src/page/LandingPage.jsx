@@ -2,10 +2,10 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 // components
-import Footer from "../components/Footer";
 import Forms from "../components/Forms";
 import PriceList from "../components/PriceList";
 import Services from "../components/Services";
+import Footer from "../components/Footer";
 
 export default function LandingPage() {
   return (
