@@ -6,6 +6,7 @@ import Forms from "../components/Forms";
 import PriceList from "../components/PriceList";
 import Services from "../components/Services";
 import Footer from "../components/Footer";
+import Faq from "../components/Faq";
 
 export default function LandingPage() {
   return (
@@ -29,7 +30,7 @@ export default function LandingPage() {
                   Bérletek megtekintése
                 </Button>
                 <Button href="#contact" variant="outline-danger">
-                  Időpont foglalás
+                  Kérdésed van?
                 </Button>
               </div>
             </Col>
@@ -38,6 +39,7 @@ export default function LandingPage() {
       </section>
       <Services />
       <PriceList />
+      <Faq />
       <Forms />
       <Footer />
     </>
