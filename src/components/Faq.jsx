@@ -12,7 +12,7 @@ export default function Faq() {
     setOpenId(openId === id ? null : id);
   };
   return (
-    <Container id="faq" className="padding-custom">
+    <Container id="faq" className="pt-5 pb-3 mt-5 mb-5">
       <h2 className="text-center mb-5 fw-bold display-6">Gyakori kérdések</h2>
       <div className="accordion">
         {faqItems.map((item) => (
