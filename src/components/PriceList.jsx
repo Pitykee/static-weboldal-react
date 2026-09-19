@@ -23,9 +23,11 @@ export default function PriceList() {
           </h2>
           {cardItems.priceItems.map((item) => (
             <Col md={4} key={item.id} className="mb-4 d-flex">
-              <Card className="rounded-4 text-center w-100 h-100">
+              <Card className="rounded-4 text-center w-100 h-100 about-card">
                 <CardBody className="rounded-4 py-5 px-4 gap-3 d-flex flex-column">
-                  <CardTitle className="fw-bold fs-3">{item.name}</CardTitle>
+                  <CardTitle className="fw-bold fs-3 text-danger">
+                    {item.name}
+                  </CardTitle>
                   <CardSubtitle className="mb-2 fs-5">
                     {item.price} Ft
                   </CardSubtitle>

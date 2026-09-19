@@ -21,10 +21,22 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #00000080;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+}
+
+.about-card {
+  border-radius: 12px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px #00000026;
 }
